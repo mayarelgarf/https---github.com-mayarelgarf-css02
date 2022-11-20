@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 8vh;
+  background-color: rgb(202, 183, 158);
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.logo {
+  color: rgb(208, 213, 216);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+.nav-links a {
+  color: rgb(230, 234, 236);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.nav-links li {
+  list-style: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(230, 234, 236);
+  margin: 5px;
+  border-radius: 2px;
+}
+.burger {
+  display: none;
+}
+
+.main-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  margin-top: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  gap: 2%;
+  margin: 2% 10% ;
+
+}
+
+
+.right-pics{display: grid;
+grid-template-rows: 1fr 1fr;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+gap: 2%;}
+
+.right-pics div{position: relative; overflow: hidden;}
+.right-pics div img{  transition: transform .5s ease;}
+.right-pics div img:hover{  transform: scale(1.5);;}
+
+.right-pics div h2{position: absolute; font-size: 100%;}
+.zoom{overflow: hidden;}
+.zoom img{transition: transform .5s ease;}
+.zoom img:hover {
+    transform: scale(1.5) ;
+    }
+
+.main-body h2 {
+  position: absolute;
+  justify-self: center;
+  font-size: 10vh;
+  text-align: center;
+  color: aliceblue;
+}
+.main-body div {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.main-body div img {
+  width: 100%;
+  height: 100%;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%;
+  margin: 2%;
+  height: 10vh;
+}
+.buttons button {
+  width: 80%;
+  height: 100%;
+  border: 0;
+  background-color: rgb(202, 183, 158);
+  font-size: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: aliceblue;
+  text-align: center;
+}
+.buttons  button:hover{background-color:rgb(68, 52, 31) ;}
+
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    background-color: rgb(202, 183, 158);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-active {
+    transform: translateX(0);
+  }
+  .logo{font-size: 40%;}
+  .main-body{display: grid;
+  grid-template-columns: 1fr;
+justify-content: center;
+align-items: center;margin: 2%;}
+.zoom h2{font-size: 100%;}
+}
+@media only screen and (max-width: 1024) {
+  .nav-links {
+    width: 60%;
+  }
+}
